@@ -1,0 +1,3 @@
+[submodule "mcp"]
+	path = mcp
+	url = ../excalidash-mcp.git
