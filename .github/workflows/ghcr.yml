@@ -1,4 +1,4 @@
-# Fork-only: build backend + frontend and publish to ghcr.io/<owner>/excalidash-{backend,frontend}.
+# Fork-only: build backend, frontend and mcp and publish to ghcr.io/<owner>/excalidash-{backend,frontend,mcp}.
 # Tags: latest (main), sha-<short>, and <version> from git tags v*.
 name: GHCR images
 
@@ -25,6 +25,9 @@ jobs:
           - name: frontend
             dockerfile: frontend/Dockerfile
             build_arg: VITE_APP_BUILD_LABEL
+          - name: mcp
+            dockerfile: mcp/Dockerfile
+            build_arg: APP_BUILD_LABEL
     steps:
       - uses: actions/checkout@v4
 
